@@ -4,7 +4,7 @@ Projeto de teste com foco na blibioteca RestAssured.
 
 ## Tipo de alteração
 
-- [] Refatoração 
+- [ ] Refatoração 
 - [x] Nova funcionalidade
 - [ ] Alteração na documentação
 - [ ] Outro (especifique)
