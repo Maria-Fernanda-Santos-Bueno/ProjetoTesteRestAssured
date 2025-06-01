@@ -1,6 +1,6 @@
 # Descrição
 
-Projeto de teste com foco na blibioteca RestAssured.
+Projeto de teste com foco na blibioteca RestAssured utilizando IntelliJ.
 
 ## Tipo de alteração
 
