@@ -16,12 +16,11 @@ public class ProdutoTest {
 
     @BeforeEach
     public void beforeEach(){
-        //config dos dados da API Rest da lojinha
+        //Configuração dos Dados da API Rest da Lojinha
         baseURI = "http://165.227.93.41";
-        //port = 8080;
         basePath = "/lojinha";
 
-        //token do usuario admin
+        //Token do Usuário admin
         this.token =
                 given()
                         .contentType(ContentType.JSON)
@@ -30,11 +29,11 @@ public class ProdutoTest {
                         .post("/v2/login")
                     .then()
                         .extract()
-                            .path("data.token");
+                        .path("data.token");
     }
 
     @Test
-    @DisplayName("Validar que valor do produto igual a 0.00 neo e permitido")
+    @DisplayName("Validar que valor do produto igual a 0.00 não é permitido")
     public void testValidarLimitesZeradoProibidoValorProdutos(){
 
         // Tentar inserir um produto com o valor 0.00 e validar que a mensagem de erro foi apresentada
@@ -54,11 +53,11 @@ public class ProdutoTest {
     }
 
     @Test
-    @DisplayName("Validar que valor do produto igual a 7000.00 nao e permitido")
+    @DisplayName("Validar que valor do produto igual a 7000.00 não é permitido")
     public void testValidarLimitesMaiorSeteMilProibidoValorProdutos(){
 
         // Tentar inserir um produto com o valor 7000.01 e validar que a mensagem de erro foi apresentada
-        // e o status code retornado foi
+        // e o status code retornado foi 422
 
         given()
                 .contentType(ContentType.JSON)
